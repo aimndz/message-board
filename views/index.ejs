@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Message Board</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>Message Board</h1>
+
+    <% messages.forEach(message => { %>
+    <div>
+      <h1><%= message.user %></h1>
+      <p><%= message.text %></p>
+      <p><%= message.added %></p>
+    </div>
+    <% }) %>
+
+    <form method="POST" action="/new">
+      <div>
+        <label for="user-input">User</label>
+        <input id="user-input" name="user-input" type="text" />
+      </div>
+      <div>
+        <label for="text-input">message</label>
+        <input id="text-input" name="text-input" type="text" />
+      </div>
+      <button type="submit">Send</button>
+    </form>
+  </body>
+</html>
