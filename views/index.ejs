@@ -1,30 +1,59 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Message Board</title>
+    <title>Bullet-In Board</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="/javascripts/index.js"></script>
   </head>
   <body>
-    <h1>Message Board</h1>
-
-    <% messages.forEach(message => { %>
-    <div>
-      <h1><%= message.user %></h1>
-      <p><%= message.text %></p>
-      <p><%= message.added %></p>
-    </div>
-    <% }) %>
-
-    <form method="POST" action="/new">
-      <div>
-        <label for="user-input">User</label>
-        <input id="user-input" name="user-input" type="text" />
-      </div>
-      <div>
-        <label for="text-input">message</label>
-        <input id="text-input" name="text-input" type="text" />
-      </div>
-      <button type="submit">Send</button>
-    </form>
+    <main class="container">
+      <section class="form-container">
+        <h1 class="title">Create a Message</h1>
+        <form method="POST" action="/new">
+          <div id="username-container" class="input-container">
+            <label for="user-input">Username</label>
+            <input
+              id="user-input"
+              name="user-input"
+              type="text"
+              placeholder="Enter your username"
+              maxlength="30"
+            />
+          </div>
+          <div id="message-container" class="input-container">
+            <label for="text-input">Message</label>
+            <div class="textarea-container">
+              <textarea
+                name="text-input"
+                id="text-input"
+                rows="10"
+                placeholder="Share your thoughts, even the weird ones"
+              ></textarea>
+              <p id="text-count" class="text-count" maxLength="180">0/180</p>
+            </div>
+          </div>
+          <button type="submit">Send</button>
+        </form>
+        <p class="footer">© Amiel Ian Mendoza 2024</p>
+      </section>
+      <section class="message-board">
+        <h1 class="title">Bullet-In Board</h1>
+        <div class="message-board-container">
+          <% for (let i = messages.length - 1; i >= 0; i--) { %>
+          <div class="message-box">
+            <p class="message-user"><%= messages[i].user %></p>
+            <p class="message-text"><%= messages[i].text %></p>
+            <p class="message-date"><%= messages[i].added %></p>
+          </div>
+          <% } %>
+        </div>
+      </section>
+    </main>
   </body>
 </html>

@@ -10,11 +10,6 @@ const messages = [
     user: "Amiel",
     added: format(new Date(), "MMM d, yyyy, h:mm a"),
   },
-  {
-    text: "Hello worlddd!",
-    user: "Ian",
-    added: format(new Date(), "MMM d, yyyy, h:mm a"),
-  },
 ];
 
 router.get("/", function (req, res, next) {
