@@ -89,8 +89,4 @@ userInput.addEventListener("input", () => {
   if (userInput.value.length > maxCount) {
     userInput.value = userInput.value.slice(0, userInput.maxLength);
   }
-
-  currentLength = userInput.value.length;
-  textCount.textContent = `${currentLength} / ${maxCount}`;
-  textCount.style.color = currentLength >= maxCount ? "#FF0000" : "white";
 });
