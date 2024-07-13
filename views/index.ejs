@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>Bullet-In Board</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,6 +16,32 @@
   <body>
     <main class="container">
       <section class="form-container">
+        <svg
+          id="close-modal-btn"
+          class="close-modal hidden"
+          width="20"
+          height="20"
+          viewBox="0 0 100 100"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line
+            x1="10"
+            y1="10"
+            x2="90"
+            y2="90"
+            stroke="white"
+            stroke-width="10"
+          />
+          <line
+            x1="90"
+            y1="10"
+            x2="10"
+            y2="90"
+            stroke="white"
+            stroke-width="10"
+          />
+        </svg>
+
         <h1 class="title">Create a Message</h1>
         <form method="POST" action="/new">
           <div id="username-container" class="input-container">
@@ -43,7 +71,43 @@
         <p class="footer">© Amiel Ian Mendoza 2024</p>
       </section>
       <section class="message-board">
-        <h1 class="title">Bullet-In Board</h1>
+        <div class="title">
+          <h1>Bullet-In Board</h1>
+          <div id="open-modal-btn" class="open-modal-btn hidden">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 100 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="45"
+                stroke="white"
+                stroke-width="5"
+                fill="none"
+              />
+              <line
+                x1="50"
+                y1="25"
+                x2="50"
+                y2="75"
+                stroke="white"
+                stroke-width="5"
+              />
+              <line
+                x1="25"
+                y1="50"
+                x2="75"
+                y2="50"
+                stroke="white"
+                stroke-width="5"
+              />
+            </svg>
+          </div>
+        </div>
+
         <div class="message-board-container">
           <% for (let i = messages.length - 1; i >= 0; i--) { %>
           <div class="message-box">

@@ -90,3 +90,37 @@ userInput.addEventListener("input", () => {
     userInput.value = userInput.value.slice(0, userInput.maxLength);
   }
 });
+
+//Open Modal
+
+const openModalBtn = document.querySelector("#open-modal-btn");
+const closeModalBtn = document.querySelector("#close-modal-btn");
+
+const formContainer = document.querySelector(".form-container");
+
+openModalBtn.addEventListener("click", () => {
+  formContainer.style.display = "block";
+});
+
+closeModalBtn.addEventListener("click", () => {
+  formContainer.style.display = "none";
+});
+
+// Add event listener for window resize
+window.addEventListener("resize", () => {
+  if (window.innerWidth >= 900) {
+    formContainer.style.display = "block";
+  } else {
+    formContainer.style.display = "none";
+  }
+});
+
+// Scroll Horizontally
+const container = document.querySelector(".message-board-container");
+
+window.addEventListener("wheel", (e) => {
+  if (e.deltaY !== 0) {
+    container.scrollLeft += e.deltaY;
+    e.preventDefault();
+  }
+});
