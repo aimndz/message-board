@@ -68,7 +68,7 @@ body {
   align-items: center;
   height: 100vh;
   background: radial-gradient(
-    circle 1200px at right bottom,
+    circle 1200px at left bottom,
     rgba(51, 229, 253, 0.2),
     rgba(35, 35, 35, 0.2)
   );
