@@ -91,7 +91,7 @@ userInput.addEventListener("input", () => {
   }
 });
 
-//Open Modal
+// Open Modal
 
 const openModalBtn = document.querySelector("#open-modal-btn");
 const closeModalBtn = document.querySelector("#close-modal-btn");
@@ -104,15 +104,6 @@ openModalBtn.addEventListener("click", () => {
 
 closeModalBtn.addEventListener("click", () => {
   formContainer.style.display = "none";
-});
-
-// Add event listener for window resize
-window.addEventListener("resize", () => {
-  if (window.innerWidth >= 900) {
-    formContainer.style.display = "block";
-  } else {
-    formContainer.style.display = "none";
-  }
 });
 
 // Scroll Horizontally
