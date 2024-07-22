@@ -18,8 +18,8 @@ router.get("/", function (req, res, next) {
 
 router.post("/new", function (req, res) {
   const newMessage = {
-    user: req.body["user-input"],
-    text: req.body["text-input"],
+    user: req.body["userInput"],
+    text: req.body["textInput"],
     added: format(new Date(), "MMM d, yyyy, h:mm a"),
   };
 
