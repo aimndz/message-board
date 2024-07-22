@@ -1,30 +1,12 @@
-const { format } = require("date-fns");
+const messages = require("../public/javascripts/constant");
+
 const express = require("express");
 const router = express.Router();
 
 /* GET home page. */
 
-const messages = [
-  {
-    text: "Hello world!",
-    user: "Amiel",
-    added: format(new Date(), "MMM d, yyyy, h:mm a"),
-  },
-];
-
 router.get("/", function (req, res, next) {
   res.render("index", { messages: messages });
-});
-
-router.post("/new", function (req, res) {
-  const newMessage = {
-    user: req.body["userInput"],
-    text: req.body["textInput"],
-    added: format(new Date(), "MMM d, yyyy, h:mm a"),
-  };
-
-  messages.push(newMessage);
-  res.redirect("/");
 });
 
 module.exports = router;
