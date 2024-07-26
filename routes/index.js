@@ -1,12 +1,10 @@
-const messages = require("../public/javascripts/constant");
+const homeController = require("../controllers/homeController");
 
 const express = require("express");
 const router = express.Router();
 
 /* GET home page. */
 
-router.get("/", function (req, res, next) {
-  res.render("index", { messages: messages });
-});
+router.get("/", homeController.getAllMessages);
 
 module.exports = router;
