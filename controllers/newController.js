@@ -6,7 +6,7 @@ async function createMessage(req, res) {
     message: req.body.textInput,
   };
 
-  await db.createMessage(...newMessage);
+  await db.insertMessage(newMessage.user, newMessage.message);
   res.redirect("/");
 }
 

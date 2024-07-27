@@ -1,8 +1,8 @@
 const pool = require("./pool");
 
 async function getAllMessages() {
-  const { messages } = await pool.query("SELECT * FROM messages");
-  return messages;
+  const { rows } = await pool.query("SELECT * FROM messages");
+  return rows;
 }
 
 async function insertMessage(username, message) {
